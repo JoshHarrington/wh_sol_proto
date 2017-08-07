@@ -1,0 +1,7 @@
+header .logo {
+	width: 15em;
+	margin-right: 2em;
+	@include mq($until: tablet) {
+		margin-bottom: 2em;
+	}
+}

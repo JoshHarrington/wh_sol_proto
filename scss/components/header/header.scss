@@ -1,0 +1,10 @@
+header .flexy {
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	flex-wrap: wrap;
+	@include mq($until: tablet) {
+		align-items: flex-start;
+	}
+}
