@@ -1,0 +1,20 @@
+.wide-btn {
+	display: block;
+	background-color: var(--hs-red);
+	padding: .9em;
+	color: white;
+	font-size: 1.2em;
+	text-decoration: none;
+	@at-root button#{&} {
+		width: 100%;
+    border: none;
+		text-align: left;
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.wide-btn--grey {
+	background-color: var(--hs-grey);
+}

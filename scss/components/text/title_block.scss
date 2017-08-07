@@ -1,0 +1,10 @@
+.titleBlock {
+	margin: 0;
+	padding: .9em;
+	background-color: var(--hs-red);
+	color: white;
+	font-size: 1em;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}

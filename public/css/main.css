@@ -208,7 +208,6 @@ samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-button,
 input,
 optgroup,
 select,
@@ -232,7 +231,6 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-button,
 select {
   text-transform: none; }
 
@@ -243,7 +241,6 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -251,6 +248,9 @@ input[type="submit"] {
   /* 2 */
   cursor: pointer;
   /* 3 */ }
+
+button {
+  cursor: pointer; }
 
 /**
  * Re-set default cursor for disabled elements.
@@ -361,10 +361,11 @@ th {
   padding: 0; }
 
 :root {
-  font-family: 'Archivo', sans-serif; }
+  font-family: 'Archivo', sans-serif;
+  line-height: 1.4em; }
 
 .container {
-  max-width: 60em;
+  max-width: 64em;
   width: 100%;
   padding-left: 2em;
   padding-right: 2em;
@@ -374,10 +375,41 @@ th {
 .container.flexy {
   display: flex; }
 
+.page-layout {
+  margin-top: -2em;
+  flex-wrap: wrap; }
+  .page-layout h3 {
+    color: var(--hs-red); }
+  .page-layout aside {
+    width: calc(30% - 3em); }
+    @media (max-width: 46.24em) {
+      .page-layout aside {
+        width: 100%; } }
+  .page-layout article img {
+    max-width: 100%; }
+  @media (min-width: 46.25em) {
+    .page-layout article {
+      width: 35%;
+      margin-left: 1.5em; } }
+  @media (max-width: 46.24em) {
+    .page-layout article {
+      margin-top: 2em; } }
+  @media (min-width: 20em) and (max-width: 46.24em) {
+    .page-layout article {
+      width: calc(50% - 1em); }
+      .page-layout article + article {
+        margin-left: 2em; } }
+  @media (max-width: 19.99em) {
+    .page-layout article {
+      width: 100%; } }
+
 :root {
   --color1: #616161;
   --color2: #b01c33;
-  --hs-red: var(--color2); }
+  --hs-red: var(--color2);
+  --hs-red--light: #f64c65;
+  --light-grey: #eee;
+  --hs-grey: var(--color1); }
 
 header .flexy {
   justify-content: space-between;
@@ -413,3 +445,55 @@ header img {
 
 .fullWidth {
   background-color: red; }
+
+.titleBlock {
+  margin: 0;
+  padding: .9em;
+  background-color: var(--hs-red);
+  color: white;
+  font-size: 1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; }
+
+.internal-titleBlock {
+  padding: .9em;
+  background-color: var(--hs-red--light);
+  color: white;
+  display: inline-block;
+  padding-right: 2em; }
+  aside .column--content .internal-titleBlock + * {
+    margin-top: 0; }
+
+.wide-btn {
+  display: block;
+  background-color: var(--hs-red);
+  padding: .9em;
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none; }
+  button.wide-btn {
+    width: 100%;
+    border: none;
+    text-align: left; }
+    button.wide-btn:focus {
+      outline: none; }
+
+.wide-btn--grey {
+  background-color: var(--hs-grey); }
+
+aside .column--content > p {
+  margin-bottom: 0; }
+
+aside .column--content > * + * {
+  margin-top: 1em; }
+
+aside .column--content > * > p {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+aside .column--content > *:not(p) {
+  padding: .7em 1em; }
+
+.column--content-grey {
+  background: var(--light-grey); }

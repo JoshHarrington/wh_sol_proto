@@ -1,0 +1,50 @@
+.container {
+	max-width: 64em;
+	width: 100%;
+	padding-left: 2em;
+	padding-right: 2em;
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+.container.flexy {
+	display: flex;
+}
+
+.page-layout {
+	margin-top: -2em;
+	flex-wrap: wrap;
+	h3 {
+		color: var(--hs-red);
+	}
+	aside {
+		width: calc(30% - 3em);
+		@include mq($until: tablet) {
+			width: 100%;
+		}
+		// p {
+		// 	margin: 0;
+		// }
+	}
+	article {
+		img {
+			max-width: 100%;
+		}
+		@include mq($from: tablet) {
+			width: 35%;
+			margin-left: 1.5em;
+		}
+		@include mq($until: tablet) {
+			margin-top: 2em;
+		}
+		@include mq($from: mobile, $until: tablet) {
+			width: calc(50% - 1em);
+			& + article {
+				margin-left: 2em;
+			}
+		}
+		@include mq($until: mobile) {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+.internal-titleBlock {
+	padding: .9em;
+	background-color: var(--hs-red--light);
+	color: white;
+	display: inline-block;
+	padding-right: 2em;
+	aside .column--content & + * {
+		margin-top: 0;
+	}
+}
