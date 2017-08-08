@@ -29,8 +29,10 @@
 		@include mq($from: tablet) {
 			margin-left: 1.5em;
 		}
-		@include mq($from: mobile, $until: tablet) {
+		&:not(:first-child) {
 			margin-top: 2em;
+		}
+		@include mq($from: mobile) {
 			&.halfColumn:first-child {
 				&, & + .halfColumn {
 					margin-top: 0;
@@ -45,11 +47,6 @@
 				width: calc(50% - 1em);
 				& + .halfColumn {
 					margin-left: 2em;
-				}
-			}
-			@include mq($until: mobile) {
-				& + .halfColumn {
-					margin-top: 2em;
 				}
 			}
 		}

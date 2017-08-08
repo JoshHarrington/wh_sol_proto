@@ -19,10 +19,18 @@
   },
   "homepage": "https://github.com/JoshHarrington/wh_sol_proto#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11",
     "node-sass": "^4.5.3",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "postcss-cssnext": "^3.0.2"
   },
   "dependencies": {
+    "gulp-cssnext": "^1.0.1",
     "reload": "^2.2.1"
   }
 }

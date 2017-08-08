@@ -3,7 +3,11 @@
 	--color2: #b01c33;
 
 	--hs-red: var(--color2);
-	--hs-red--light: #f64c65;
+
+	// have to use sass variables here - color modification css vars issues
+	$hs-red: #b01c33;
+	--hs-red--light: lighten($hs-red, 11%);
+
 
 	--light-grey: #eee;
 	--hs-grey: var(--color1);
