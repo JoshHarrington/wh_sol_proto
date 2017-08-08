@@ -21,26 +21,44 @@
 		width: calc(30% - 3em);
 		@include mq($until: tablet) {
 			width: 100%;
+			order: 2;
+			margin-top: 2em;
 		}
-		// p {
-		// 	margin: 0;
-		// }
+	}
+	section.page-content {
+		display: flex;
+		flex-wrap: wrap;
+		@include mq($from: tablet) {
+			width: calc(70% + 3em);
+		}
+		@include mq($until: tablet) {
+			width: 100%;
+		}
 	}
 	article {
 		img {
 			max-width: 100%;
 		}
 		@include mq($from: tablet) {
-			width: 35%;
 			margin-left: 1.5em;
 		}
 		@include mq($until: tablet) {
 			margin-top: 2em;
+			&.halfColumn:first-child {
+				&, & + .halfColumn {
+					margin-top: 0;
+				}
+			}
 		}
-		@include mq($from: mobile, $until: tablet) {
-			width: calc(50% - 1em);
-			& + article {
-				margin-left: 2em;
+		&.halfColumn {
+			@include mq($from: tablet) {
+				width: calc(50% - 1.5em);
+			}
+			@include mq($from: mobile, $until: tablet) {
+				width: calc(50% - 1em);
+				& + .halfColumn {
+					margin-left: 2em;
+				}
 			}
 		}
 		@include mq($until: mobile) {
