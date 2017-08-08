@@ -1,0 +1,26 @@
+.sub-info {
+	@include mq($until: tablet) {
+		flex-wrap: wrap;
+		margin-bottom: 2em;
+	}
+	.rights {
+		width: var(--sidebar-width);
+		@include mq($until: tablet) {
+			width: 100%;
+		}
+		+ p {
+			width: var(--main-block-width);
+			@include mq($from: tablet) {
+				padding-left: 1.5em;
+			}
+			@include mq($until: tablet) {
+				width: 100%;
+				margin: 0;
+			}
+		}
+		p {
+			font-size: 1.3em;
+			line-height: 1.4em;
+		}
+	}
+}

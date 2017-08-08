@@ -372,7 +372,7 @@ th {
   margin-left: auto;
   margin-right: auto; }
 
-.container.flexy {
+.flexy {
   display: flex; }
 
 .page-layout {
@@ -381,7 +381,7 @@ th {
   .page-layout h3 {
     color: var(--hs-red); }
   .page-layout aside {
-    width: calc(30% - 3em); }
+    width: var(--sidebar-width); }
     @media (max-width: 46.24em) {
       .page-layout aside {
         width: 100%;
@@ -392,7 +392,7 @@ th {
     flex-wrap: wrap; }
     @media (min-width: 46.25em) {
       .page-layout section.page-content {
-        width: calc(70% + 3em); } }
+        width: var(--main-block-width); } }
     @media (max-width: 46.24em) {
       .page-layout section.page-content {
         width: 100%; } }
@@ -401,7 +401,7 @@ th {
   @media (min-width: 46.25em) {
     .page-layout article {
       margin-left: 1.5em; } }
-  @media (max-width: 46.24em) {
+  @media (min-width: 30em) and (max-width: 46.24em) {
     .page-layout article {
       margin-top: 2em; }
       .page-layout article.halfColumn:first-child, .page-layout article.halfColumn:first-child + .halfColumn {
@@ -409,12 +409,15 @@ th {
   @media (min-width: 46.25em) {
     .page-layout article.halfColumn {
       width: calc(50% - 1.5em); } }
-  @media (min-width: 20em) and (max-width: 46.24em) {
+  @media (min-width: 30em) and (max-width: 46.24em) {
     .page-layout article.halfColumn {
       width: calc(50% - 1em); }
       .page-layout article.halfColumn + .halfColumn {
         margin-left: 2em; } }
-  @media (max-width: 19.99em) {
+  @media (max-width: 29.99em) {
+    .page-layout article.halfColumn + .halfColumn {
+      margin-top: 2em; } }
+  @media (max-width: 29.99em) {
     .page-layout article {
       width: 100%; } }
 
@@ -424,7 +427,10 @@ th {
   --hs-red: var(--color2);
   --hs-red--light: #f64c65;
   --light-grey: #eee;
-  --hs-grey: var(--color1); }
+  --hs-grey: var(--color1);
+  --sidebar-width: calc(30% - 3em);
+  --main-block-width: calc(70% + 3em);
+  --half-column-width: calc(50% - 1.5em); }
 
 header .flexy {
   justify-content: space-between;
@@ -456,7 +462,80 @@ header .logo {
       margin-bottom: 2em; } }
 
 header img {
-  max-width: 100%; }
+  max-width: 100%;
+  width: 100%; }
+
+main + footer {
+  margin-top: 2em; }
+
+footer .banner {
+  background-color: var(--light-grey); }
+  footer .banner > .flexy {
+    align-items: center;
+    padding-top: 2em;
+    padding-bottom: 2em; }
+    @media (max-width: 29.99em) {
+      footer .banner > .flexy {
+        flex-wrap: wrap; } }
+
+.banner--right-block {
+  align-items: center;
+  justify-content: space-between;
+  width: var(--main-block-width); }
+  @media (min-width: 30em) {
+    .banner--right-block {
+      border-left: 1px solid black;
+      padding-left: 1.5em; } }
+  .banner--right-block p {
+    margin: 0; }
+  @media (max-width: 46.24em) {
+    .banner--right-block {
+      flex-wrap: wrap; }
+      .banner--right-block img {
+        margin-top: 1em;
+        max-width: 100%; } }
+  @media (max-width: 29.99em) {
+    .banner--right-block {
+      width: 100%;
+      border-top: 1px solid black;
+      padding-top: 1.5em; } }
+
+footer .icon-wh-logo {
+  --color1: grey;
+  --color2: var(--hs-grey);
+  width: var(--sidebar-width);
+  padding-right: 3em;
+  min-width: 10em; }
+  @media (max-width: 46.24em) {
+    footer .icon-wh-logo {
+      padding-right: 1.5em; } }
+  @media (max-width: 29.99em) {
+    footer .icon-wh-logo {
+      width: 13em;
+      margin-bottom: 1.5em; } }
+
+@media (max-width: 46.24em) {
+  .sub-info {
+    flex-wrap: wrap;
+    margin-bottom: 2em; } }
+
+.sub-info .rights {
+  width: var(--sidebar-width); }
+  @media (max-width: 46.24em) {
+    .sub-info .rights {
+      width: 100%; } }
+  .sub-info .rights + p {
+    width: var(--main-block-width); }
+    @media (min-width: 46.25em) {
+      .sub-info .rights + p {
+        padding-left: 1.5em; } }
+    @media (max-width: 46.24em) {
+      .sub-info .rights + p {
+        width: 100%;
+        margin: 0; } }
+  .sub-info .rights p {
+    font-size: 1.3em;
+    line-height: 1.4em; }
 
 .fullWidth {
   background-color: red; }
@@ -484,7 +563,7 @@ header img {
   background-color: var(--hs-red);
   padding: .9em;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.1em;
   text-decoration: none; }
   p.column-addon-title + .wide-btn {
     margin-top: 0; }

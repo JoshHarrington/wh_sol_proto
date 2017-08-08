@@ -1,16 +1,3 @@
-.container {
-	max-width: 64em;
-	width: 100%;
-	padding-left: 2em;
-	padding-right: 2em;
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-.container.flexy {
-	display: flex;
-}
-
 .page-layout {
 	margin-top: -2em;
 	flex-wrap: wrap;
@@ -18,7 +5,7 @@
 		color: var(--hs-red);
 	}
 	aside {
-		width: calc(30% - 3em);
+		width: var(--sidebar-width);
 		@include mq($until: tablet) {
 			width: 100%;
 			order: 2;
@@ -29,7 +16,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		@include mq($from: tablet) {
-			width: calc(70% + 3em);
+			width: var(--main-block-width);
 		}
 		@include mq($until: tablet) {
 			width: 100%;
@@ -42,7 +29,7 @@
 		@include mq($from: tablet) {
 			margin-left: 1.5em;
 		}
-		@include mq($until: tablet) {
+		@include mq($from: mobile, $until: tablet) {
 			margin-top: 2em;
 			&.halfColumn:first-child {
 				&, & + .halfColumn {
@@ -58,6 +45,11 @@
 				width: calc(50% - 1em);
 				& + .halfColumn {
 					margin-left: 2em;
+				}
+			}
+			@include mq($until: mobile) {
+				& + .halfColumn {
+					margin-top: 2em;
 				}
 			}
 		}

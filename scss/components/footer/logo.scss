@@ -1,0 +1,14 @@
+footer .icon-wh-logo {
+	--color1: grey;
+	--color2: var(--hs-grey);
+	width: var(--sidebar-width);
+	padding-right: 3em;
+	min-width: 10em;
+	@include mq($until: tablet){
+		padding-right: 1.5em;
+	}
+	@include mq($until: mobile){
+		width: 13em;
+		margin-bottom: 1.5em;
+	}
+}

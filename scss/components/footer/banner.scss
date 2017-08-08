@@ -1,0 +1,11 @@
+footer .banner {
+	background-color: var(--light-grey);
+	> .flexy {
+		align-items: center;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		@include mq($until: mobile){
+			flex-wrap: wrap;
+		}
+	}
+}

@@ -7,4 +7,8 @@
 
 	--light-grey: #eee;
 	--hs-grey: var(--color1);
+
+	--sidebar-width: calc(30% - 3em);
+	--main-block-width: calc(70% + 3em);
+	--half-column-width: calc(50% - 1.5em);
 }
