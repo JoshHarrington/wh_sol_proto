@@ -5,6 +5,9 @@
 	color: white;
 	font-size: 1.2em;
 	text-decoration: none;
+	p.column-addon-title + & {
+		margin-top: 0;
+	}
 	@at-root button#{&} {
 		width: 100%;
     border: none;

@@ -455,15 +455,14 @@ header img {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap; }
+  .column--content + .titleBlock {
+    margin-top: 2em; }
 
-.internal-titleBlock {
-  padding: .9em;
+.column-addon-title {
+  padding: .6em 1.2em .6em .7em;
   background-color: var(--hs-red--light);
   color: white;
-  display: inline-block;
-  padding-right: 2em; }
-  aside .column--content .internal-titleBlock + * {
-    margin-top: 0; }
+  display: inline-block; }
 
 .wide-btn {
   display: block;
@@ -472,6 +471,8 @@ header img {
   color: white;
   font-size: 1.2em;
   text-decoration: none; }
+  p.column-addon-title + .wide-btn {
+    margin-top: 0; }
   button.wide-btn {
     width: 100%;
     border: none;
@@ -488,12 +489,16 @@ aside .column--content > p {
 aside .column--content > * + * {
   margin-top: 1em; }
 
+aside .column--content > * > p:first-child {
+  margin-top: 0; }
+
 aside .column--content > * > p {
-  margin-top: 0;
   margin-bottom: 0; }
 
-aside .column--content > *:not(p) {
-  padding: .7em 1em; }
-
 .column--content-grey {
-  background: var(--light-grey); }
+  background: var(--light-grey);
+  padding: .6em .7em; }
+  .column--content-grey * + * {
+    margin-top: 1em; }
+  .column--content-grey a {
+    color: var(--hs-red); }

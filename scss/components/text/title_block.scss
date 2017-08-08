@@ -7,4 +7,7 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
+	.column--content + & {
+		margin-top: 2em;
+	}
 }
