@@ -4,7 +4,4 @@ header .flexy {
 	margin-top: 2em;
 	margin-bottom: 2em;
 	flex-wrap: wrap;
-	@include mq($until: tablet) {
-		align-items: flex-start;
-	}
 }
