@@ -32,26 +32,37 @@
 		&:not(:first-child) {
 			margin-top: 2em;
 		}
-		@include mq($from: mobile) {
-			&.halfColumn:first-child {
-				&, & + .halfColumn {
-					margin-top: 0;
-				}
-			}
-		}
 		&.halfColumn {
 			@include mq($from: tablet) {
 				width: calc(50% - 1.5em);
 			}
+			@include mq($from: mobile) {
+				&:first-child, &:first-child + .halfColumn {
+					margin-top: 0;
+				}
+			}
 			@include mq($from: mobile, $until: tablet) {
 				width: calc(50% - 1em);
-				& + .halfColumn {
-					margin-left: 2em;
-				}
 			}
 		}
 		@include mq($until: mobile) {
 			width: 100%;
+		}
+	}
+}
+
+@include mq($from: mobile, $until: tablet) {
+	.halfColumn,
+	.fullColumn + .halfColumn {
+		margin-left: 0;
+		& + .halfColumn {
+			margin-left: 2em;
+			& + .halfColumn {
+				margin-left: 0;
+				& + .halfColumn {
+					margin-left: 2em;
+				}
+			}
 		}
 	}
 }

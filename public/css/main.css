@@ -416,20 +416,32 @@ th {
       margin-left: 1.5em; } }
   .page-layout article:not(:first-child) {
     margin-top: 2em; }
-  @media (min-width: 30em) {
-    .page-layout article.halfColumn:first-child, .page-layout article.halfColumn:first-child + .halfColumn {
-      margin-top: 0; } }
   @media (min-width: 52.5em) {
     .page-layout article.halfColumn {
       width: calc(50% - 1.5em); } }
+  @media (min-width: 30em) {
+    .page-layout article.halfColumn:first-child, .page-layout article.halfColumn:first-child + .halfColumn {
+      margin-top: 0; } }
   @media (min-width: 30em) and (max-width: 52.49em) {
     .page-layout article.halfColumn {
-      width: calc(50% - 1em); }
-      .page-layout article.halfColumn + .halfColumn {
-        margin-left: 2em; } }
+      width: calc(50% - 1em); } }
   @media (max-width: 29.99em) {
     .page-layout article {
       width: 100%; } }
+
+@media (min-width: 30em) and (max-width: 52.49em) {
+  .halfColumn,
+  .fullColumn + .halfColumn {
+    margin-left: 0; }
+    .halfColumn + .halfColumn,
+    .fullColumn + .halfColumn + .halfColumn {
+      margin-left: 2em; }
+      .halfColumn + .halfColumn + .halfColumn,
+      .fullColumn + .halfColumn + .halfColumn + .halfColumn {
+        margin-left: 0; }
+        .halfColumn + .halfColumn + .halfColumn + .halfColumn,
+        .fullColumn + .halfColumn + .halfColumn + .halfColumn + .halfColumn {
+          margin-left: 2em; } }
 
 header .flexy {
   -webkit-box-pack: justify;
