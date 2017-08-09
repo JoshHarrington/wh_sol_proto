@@ -388,15 +388,25 @@ th {
       flex-wrap: wrap; }
   .page-layout h3 {
     color: #b01c33; }
-  .page-layout aside {
-    width: calc(30% - 3em); }
-    @media (max-width: 52.49em) {
-      .page-layout aside {
-        width: 100%;
-        -webkit-box-ordinal-group: 3;
-            -ms-flex-order: 2;
-                order: 2;
-        margin-top: 2em; } }
+  @media (min-width: 52.5em) {
+    .page-layout aside {
+      width: calc(30% - 3em);
+      max-height: calc(100vh - 2em);
+      overflow: auto;
+      top: 1em;
+      position: -webkit-sticky;
+      position: sticky;
+      border-top: 1px solid #b01c33;
+      border-bottom: 1px solid #b01c33;
+      background-color: rgba(255, 255, 255, .4);
+      padding-bottom: 1em; } }
+  @media (max-width: 52.49em) {
+    .page-layout aside {
+      width: 100%;
+      -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+              order: 2;
+      margin-top: 2em; } }
   .page-layout section.page-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -488,7 +498,8 @@ header nav {
         background-color: blue;
         padding: .5em .6em;
         color: white;
-        text-decoration: none; }
+        text-decoration: none;
+        z-index: 3; }
         header nav ul.nav--parent-group > li > a:visited {
           background-color: darkblue; }
     @media (max-width: 52.49em) {
@@ -510,10 +521,22 @@ header nav {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column; }
+    .nav--link-parent ul * {
+      z-index: 2;
+      position: relative; }
     .nav--link-parent ul a {
       display: block;
       padding: .4em .6em;
       background-color: grey; }
+    .nav--link-parent ul::before {
+      content: " ";
+      z-index: 1;
+      top: -10%;
+      height: 120%;
+      left: -10%;
+      width: 120%;
+      position: absolute;
+      background-color: transparent; }
   .nav--link-parent:last-child ul {
     left: auto;
     right: 0; }
@@ -521,7 +544,8 @@ header nav {
     background-color: lightblue;
     border: none;
     padding-left: .7em;
-    padding-right: .7em; }
+    padding-right: .7em;
+    z-index: 3; }
     .nav--link-parent button:hover, .nav--link-parent button:focus {
       background-color: lightseagreen; }
     .nav--link-parent button:focus {
@@ -531,7 +555,9 @@ header nav {
       display: none; } }
   @media (min-width: 52.5em) {
     .nav--link-parent button:hover + ul,
-    .nav--link-parent button:focus + ul {
+    .nav--link-parent button:focus + ul,
+    .nav--link-parent ul:hover,
+    .nav--link-parent ul:focus {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; } }

@@ -16,6 +16,7 @@ header nav {
 				padding: .5em .6em;
 				color: white;
 				text-decoration: none;
+				z-index: 3;
 				&:visited {
 					background-color: darkblue;
 				}

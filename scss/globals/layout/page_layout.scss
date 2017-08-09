@@ -5,7 +5,17 @@
 		color: var(--hs-red);
 	}
 	aside {
-		width: var(--sidebar-width);
+		@include mq($from: tablet) {
+			width: var(--sidebar-width);
+			max-height: calc(100vh - 2em);
+			overflow: auto;
+			top: 1em;
+			position: sticky;
+			border-top: 1px solid var(--hs-red);
+			border-bottom: 1px solid var(--hs-red);
+			background-color: rgba(255, 255, 255, .4);
+			padding-bottom: 1em;
+		}
 		@include mq($until: tablet) {
 			width: 100%;
 			order: 2;
