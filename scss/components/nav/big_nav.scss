@@ -4,10 +4,13 @@
 	width: 100vw;
 	background-color: lightskyblue;
 	align-items: center;
-	padding: 4em 4em 8em;
+	padding: 4em 12em 8em;
 	overflow: auto;
 	background-size: cover;
 	transition: background-image .2s;
+	a {
+		color: white;
+	}
 	&::before {
 		content: " ";
 		width: 100%;
@@ -17,8 +20,8 @@
 		left: 0;
 		position: absolute;
 		pointer-events: none;
-		background: white;
-		opacity: .2;
+		background: black;
+    opacity: .8;
 	}
 	ul {
 		padding-left: 0;
@@ -26,7 +29,7 @@
 		list-style: none;
 	}
 	.first-level {
-		width: 24em;
+		width: 18em;
 		ul {
 			padding-top: 1em;
 			padding-bottom: 1em;
@@ -38,7 +41,7 @@
 					content: " ";
 					right: 0;
 					position: absolute;
-					border-right: 1px solid gray;
+					border-right: 5px solid gray;
 					height: 1em;
 					width: 1em;
 					background-color: transparent;
@@ -48,7 +51,7 @@
 					content: " ";
 					right: 0;
 					position: absolute;
-					border-right: 1px solid gray;
+					border-right: 5px solid gray;
 					height: 1em;
 					width: 1em;
 					background-color: transparent;
@@ -61,13 +64,14 @@
 					padding: 1em;
 					position: relative;
 					width: 100%;
+					pointer-events: none;
 					&::before,
 					&::after {
 						content: " ";
 						top: 0;
 						height: 50%;
 						width: 1em;
-						border-right: 1px solid gray;
+						border-right: 5px solid gray;
 						left: calc(100% - 1em);
 						position: absolute;
 						transition: transform .2s, border-color .2s;
@@ -77,48 +81,48 @@
 						top: 50%;
 						transform-origin: bottom left;
 					}
-					&:hover,
-					&.selected {
-						&::before {
-							border-color: #b1b1b1;
-							transform: skew(12deg);
-						}
-						&::after {
-							border-color: black;
-							transform: skew(-12deg);
-						}
+				}
+				&:hover,
+				&.selected {
+					a::before {
+						border-color: #b1b1b1;
+						transform: skew(12deg);
+					}
+					a::after {
+						border-color: #353535;
+						transform: skew(-12deg);
 					}
 				}
 			}
 		}
 	}
 	.second-level {
-		width: calc(100% - 24em);
-		margin-left: 3em;
+		width: calc(100% - 18em);
 		display: block;
 		position: relative;
 		overflow: hidden;
-		&, * {
-			backface-visibility: hidden;
-			-webkit-transform: translateZ(0) scale(1.0, 1.0);
-			transform: translateZ(0);
-		}
 		ul {
 			position: absolute;
 			left: -5em;
 			opacity: 0;
 			transition: left .6s, opacity .6s;
 			top: 0;
+			width: 100%;
+			padding-left: 3em;
 			&.show {
 				left: 0;
 				opacity: 1;
 			}
+			color: white;
 		}
 		.default-block {
 			opacity: 1;
 			transition: opacity .6s;
+			color: white;
+			padding: 1em 3em;
 			&.hide {
 				opacity: 0;
+				pointer-events: none;
 			}
 		}
 	}

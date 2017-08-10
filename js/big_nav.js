@@ -13,9 +13,27 @@ firstLevelNav.addEventListener('mouseover', listHoverAction, false);
 document.addEventListener('click', resetDefaultBlock, false);
 
 function listHoverAction(e) {
+	var target;
+
+	// if (e.target.tagName.toLowerCase() !== 'li') {
+	// 	target = e.target.closest('li');
+	// 	var index = firstLevelItemsSlicey.indexOf(e.target);
+	// 	var listBgImgData = target.dataset.bgImg;
+
+
+	// 	clearSelectedAndShowy();
+	// 	hideDefaultNavMsg();
+
+	// 	bigNav.dataset.bgImg = listBgImgData; 
+
+	// 	target.classList.add('selected');
+	// 	secondLevelItems[index].classList.add('show');
+
+	// 	e.stopPropagation();
+	// } else 
 	if (e.target.tagName.toLowerCase() === 'li') {
+		target = e.target;
 		var index = firstLevelItemsSlicey.indexOf(e.target);
-		var target = e.target;
 		var listBgImgData = target.dataset.bgImg;
 
 
@@ -26,9 +44,11 @@ function listHoverAction(e) {
 
 		target.classList.add('selected');
 		secondLevelItems[index].classList.add('show');
+
+		e.stopPropagation();
 	}
-	e.stopPropagation();
 }
+
 
 function hideDefaultNavMsg(e) {
 	if ( !(defaultBlock.classList.contains('hide')) ) {
