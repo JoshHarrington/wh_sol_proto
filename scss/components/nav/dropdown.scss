@@ -7,7 +7,7 @@
 		left: 0;
 		min-width: 100%;
 		width: 10em;
-    font-size: .9em;
+    font-size: rem(14);
 		flex-direction: column;
 		* {
 			z-index: 2;
@@ -15,13 +15,12 @@
 		}
 		a {
 			display: block;
-			padding: .4em .6em;
+			padding: rem(6) rem(10);
 			background-color: grey;
 		}
 		&::before {
 			content: " ";
 			z-index: 1;
-			// pointer-events: none;
 			top: -10%;
 			height: 120%;
 			left: -10%;
@@ -37,8 +36,8 @@
 	button {
 		background-color: lightblue;
 		border: none;
-		padding-left: .7em;
-		padding-right: .7em;
+		padding-left: rem(11);
+		padding-right: rem(11);
 		z-index: 3;
 		&:hover,
 		&:focus {

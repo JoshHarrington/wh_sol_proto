@@ -2,9 +2,9 @@
 	align-items: center;
 	justify-content: space-between;
 	width: var(--main-block-width);
+	padding-left: rem(24);
 	@include mq($from: mobile){
 		border-left: 1px solid black;
-		padding-left: 1.5em;
 	}
 	p {
 		margin: 0;
@@ -19,6 +19,5 @@
 	@include mq($until: mobile){
 		width: 100%;
 		border-top: 1px solid black;
-		padding-top: 1.5em;
 	}
 }

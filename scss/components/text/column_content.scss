@@ -17,7 +17,7 @@ aside .column--content {
 
 .column--content-grey {
 	background: var(--light-grey);
-	padding: .6em .7em;
+	padding: rem(10) rem(11);
 	* + * {
 		margin-top: 1em;
 	}

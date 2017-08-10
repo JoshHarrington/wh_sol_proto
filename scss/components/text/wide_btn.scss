@@ -1,9 +1,9 @@
 .wide-btn {
 	display: block;
 	background-color: var(--hs-red);
-	padding: .9em;
+	padding: rem(14);
 	color: white;
-	font-size: 1.1em;
+	font-size: rem(18);
 	text-decoration: none;
 	p.column-addon-title + & {
 		margin-top: 0;

@@ -11,7 +11,7 @@
 		+ p {
 			width: var(--main-block-width);
 			@include mq($from: tablet) {
-				padding-left: 1.5em;
+				padding-left: rem(24);
 			}
 			@include mq($until: tablet) {
 				width: 100%;
@@ -19,8 +19,8 @@
 			}
 		}
 		p {
-			font-size: 1.3em;
-			line-height: 1.4em;
+			font-size: rem(21);
+			line-height: rem(23);
 		}
 	}
 }

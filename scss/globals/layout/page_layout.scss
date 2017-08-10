@@ -37,14 +37,14 @@
 			max-width: 100%;
 		}
 		@include mq($from: tablet) {
-			margin-left: 1.5em;
+			margin-left: rem(24);
 		}
 		&:not(:first-child) {
 			margin-top: 2em;
 		}
 		&.halfColumn {
 			@include mq($from: tablet) {
-				width: calc(50% - 1.5em);
+				width: calc(50% - 1.5rem);
 			}
 			@include mq($from: mobile) {
 				&:first-child, &:first-child + .halfColumn {
