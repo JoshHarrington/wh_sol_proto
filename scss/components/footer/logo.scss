@@ -5,10 +5,10 @@ footer .icon-wh-logo {
 	padding-right: 3em;
 	min-width: 10em;
 	@include mq($until: tablet){
-		padding-right: 1.5em;
+		padding-right: rem(24);
 	}
 	@include mq($until: mobile){
 		width: 13em;
-		margin-bottom: 1.5em;
+		margin-bottom: rem(24);
 	}
 }

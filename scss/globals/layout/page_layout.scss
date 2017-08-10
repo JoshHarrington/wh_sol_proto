@@ -25,7 +25,9 @@
 	section.page-content {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
 		@include mq($from: tablet) {
+			padding-left: 1.5rem;
 			width: var(--main-block-width);
 		}
 		@include mq($until: tablet) {
@@ -36,46 +38,21 @@
 		img {
 			max-width: 100%;
 		}
-		@include mq($from: tablet) {
-			margin-left: 1.5em;
-		}
 		&:not(:first-child) {
 			margin-top: 2em;
 		}
 		&.halfColumn {
-			@include mq($from: tablet) {
-				width: calc(50% - 1.5em);
-			}
 			@include mq($from: mobile) {
 				&:first-child, &:first-child + .halfColumn {
 					margin-top: 0;
 				}
 			}
-			@include mq($from: mobile, $until: tablet) {
-				width: calc(50% - 1em);
+			@include mq($from: mobile) {
+				width: calc(50% - .75rem);
 			}
 		}
 		@include mq($until: mobile) {
 			width: 100%;
-		}
-	}
-}
-
-@include mq($from: mobile, $until: tablet) {
-	.halfColumn,
-	.fullColumn + .halfColumn {
-		margin-left: 0;
-		& + .halfColumn {
-			margin-left: 2em;
-			& + .halfColumn {
-				margin-left: 0;
-				& + .halfColumn {
-					margin-left: 2em;
-					& + .halfColumn {
-						margin-left: 0;
-					}
-				}
-			}
 		}
 	}
 }
